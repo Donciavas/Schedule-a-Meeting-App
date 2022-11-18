@@ -21,5 +21,6 @@ namespace InternalMeeting.Repository
                 }else ConsoleMsg.WrongInputMsg();
             }
         }
+       
     }
 }
