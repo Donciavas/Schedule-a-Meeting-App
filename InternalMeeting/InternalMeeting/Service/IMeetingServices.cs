@@ -4,5 +4,6 @@ namespace InternalMeeting.Service
 {
     public interface IMeetingServices
     {
+        
     }
 }

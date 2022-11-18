@@ -22,5 +22,23 @@
             EndDate = endDate;
             PersonList = new List<Person>() { ResponsiblePerson };
         }
+        internal string PersonListToString()
+        {
+            var newString = "";
+            var tempCount = 1;
+            foreach (var person in PersonList)
+            {
+                newString = newString + tempCount + ")" + person.ToString() + " ";
+                tempCount ++;
+            }
+            return newString;
+        }
+        public override string? ToString()
+        {
+            return $"   Meeting Name: {Name}, Resposible person: {ResponsiblePerson}, Description: {Description}\n" +
+                   $"   Meeting category: {Category}, Type: {Type}, Start date: {StartDate} End date: {EndDate}\n" +
+                   $"   List of participants: {PersonListToString()}\n" +
+                   $"   -------------------------------------------------------------------------------------------";
+        }
     }
 }
