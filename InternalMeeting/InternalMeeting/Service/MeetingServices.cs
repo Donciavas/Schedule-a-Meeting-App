@@ -100,30 +100,30 @@ namespace InternalMeeting.Service
             }
             return ($"Wrong Person name, {personName} don't exist in the meeting", foundedMeeting);
         }
-        public List<Meeting> GetMeetingsByMeetType(MeetType type)
+        public IList<Meeting> GetMeetingsByMeetType(MeetType type)
         {
             return _fileService.ReadMeetings().Where(t => t.Type == type).ToList();
         }
-        public List<Meeting> GetMeetingByAttendeesNumber(int moreThan)
+        public IList<Meeting> GetMeetingByAttendeesNumber(int moreThan)
         {
             return _fileService.ReadMeetings().Where(t => t.PersonList.Count > moreThan).ToList();
         }
-        public List<Meeting> GetMeetingsByCategory(Category category)
+        public IList<Meeting> GetMeetingsByCategory(Category category)
         {
             return _fileService.ReadMeetings().Where(t => t.Category == category).ToList();
         }
-        public List<Meeting> GetMeetingsByDates(DateTime fromdDate, DateTime toDate)
+        public IList<Meeting> GetMeetingsByDates(DateTime fromdDate, DateTime toDate)
         {
             return _fileService.ReadMeetings().Where(m => m.StartDate >= fromdDate).
                                                Where(m => m.EndDate <= toDate).
                                                ToList();
         }
-        public List<Meeting> GetMeetingsByDescription(string description)
+        public IList<Meeting> GetMeetingsByDescription(string description)
         {
             description = description.ToLower();
             return _fileService.ReadMeetings().Where(m => m.Description.ToLower().Contains(description)).ToList();
         }
-        public List<Meeting> GetMeetingsByResponsiblePerson(string responsiblePerson)
+        public IList<Meeting> GetMeetingsByResponsiblePerson(string responsiblePerson)
         {
             return _fileService.ReadMeetings().Where(t => t.ResponsiblePerson.Name == responsiblePerson).ToList();
         }

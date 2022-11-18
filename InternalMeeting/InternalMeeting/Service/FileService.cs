@@ -19,7 +19,7 @@ namespace InternalMeeting.Service
             return listMeetings == null ? new List<Meeting>() : listMeetings;
         }
 
-        public void WriteMeetings(List<Meeting> meetingsList)
+        public void WriteMeetings(IList<Meeting> meetingsList)
         {
             string json = JsonSerializer.Serialize(meetingsList);
             File.WriteAllText(_path, json);
