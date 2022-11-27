@@ -5,7 +5,6 @@ namespace InternalMeeting;
 
 public static class Program
 {
-    
     public static MeetingRepository _meetingRepository = new();
     public static void Main()
     {
@@ -23,7 +22,6 @@ public static class Program
             var resposiblePerson = new Person(userInput);
             _meetingRepository.StartProgram(resposiblePerson);
         }
-
     }
 }
 

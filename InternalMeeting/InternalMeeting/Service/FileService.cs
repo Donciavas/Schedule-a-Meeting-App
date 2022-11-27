@@ -16,9 +16,8 @@ namespace InternalMeeting.Service
                 return new List<Meeting>();
             var readedMeetings = File.ReadAllText(_path); 
             List<Meeting>? listMeetings = JsonSerializer.Deserialize<List<Meeting>>(readedMeetings);
-            return listMeetings == null ? new List<Meeting>() : listMeetings;
+            return listMeetings ?? new List<Meeting>();
         }
-
         public void WriteMeetings(IList<Meeting> meetingsList)
         {
             string json = JsonSerializer.Serialize(meetingsList);

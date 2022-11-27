@@ -2,7 +2,6 @@
 
 namespace InternalMeeting.Service
 {
-    
     public class MeetingServices : IMeetingServices
     {
         public FileService _fileService;

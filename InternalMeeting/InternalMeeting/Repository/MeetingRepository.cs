@@ -70,7 +70,7 @@ namespace InternalMeeting.Repository
                 ConsoleMsg.ContinueMsg();
             }
         }
-        public Meeting GetMeetingFromList()
+        public Meeting? GetMeetingFromList()
         {
             var listMeetings = _meetingServices.GetAllMeetings();
             foreach (var meeting in listMeetings)
@@ -201,7 +201,7 @@ namespace InternalMeeting.Repository
                 else ConsoleMsg.WrongInputMsg();
             }
         }
-        internal Category InputForCategoty()
+        internal static Category InputForCategoty()
         {
             while (true)
             {
@@ -216,10 +216,9 @@ namespace InternalMeeting.Repository
                     else ConsoleMsg.WrongInputMsg();
                 }
                 else ConsoleMsg.WrongInputMsg();
-
             }
         }
-        internal string InputForString()
+        internal static string InputForString()
         {
             string stringInput;
             while (true)
@@ -234,7 +233,7 @@ namespace InternalMeeting.Repository
             }
             return stringInput;
         }
-        internal MeetType InputForMeetType()
+        internal static MeetType InputForMeetType()
         {
             while (true)
             {
@@ -250,7 +249,7 @@ namespace InternalMeeting.Repository
                 else ConsoleMsg.WrongInputMsg();
             }
         }
-        internal DateTime InputForDateTime()
+        internal static DateTime InputForDateTime()
         {
             while (true)
             {
